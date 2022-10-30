@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+
+  int n;
+  printf("Enter the number of products: \n");
+  scanf("%d",&n);
+
+  int i, budget, prices[n], totPrices=0;
+  char products[100][50];
+  
+  printf("Enter total budget: ");
+  scanf("%d",&budget);
+  printf("\n\t\t-(Enter the prices in ascending order)-\n\n");
+
+  for(i=0; i<n; i++){
+    printf("Enter the product %d: \n",i+1);
+    scanf("%s",products[i]);
+    printf("Enter the price: \n");
+    scanf("%d",&prices[i]);
+  }
+
+ printf("\t\tThe available products according to your budget: \n\n");
+ for(i=0; totPrices<=budget; i++){
+   printf("%s : %d EGP\n",products[i],prices[i]);
+   totPrices += prices[i];
+ }
+   printf("\nTotal is %d\n",totPrices);
+   printf("Rest : %d",budget-totPrices);
+  return 0;
+}

@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+void status(int y){
+  printf(y>0?"Positive\n":(y<0?"Negative\n":"Zero\n"));
+  printf(y%2?"Odd\n":"Even\n");
+}
+int digits(int x){
+  int r=0;
+  while(x){
+    x/=10;
+    r++;
+  }
+  printf("%d digits\n",r);
+  return r;
+}
+
+int isPrime(int p){
+  int i;
+  for(i=2; i<p; i++)
+    if(p%i==0)
+      return 0;
+  return p>1?1:0;
+}
+int main(void) { 
+  
+  int n;
+  
+  printf("Enter a number: \n");
+  scanf("%d",&n);
+
+  status(n);
+  digits(n);
+  isPrime(n);
+  printf(isPrime(n)?"Prime":"Not prime");
+  return 0;
+}
